@@ -9,7 +9,7 @@ const discription=document.querySelector('.info h3');
 const size=document.querySelector('.size');
 
 // moving animation event
-container.addEventListener('mousemove', (e)=>{
+container.addEventListener('mousemove'||touchs, (e)=>{
     let xAxis= (window.innerWidth/ 2 - e.pageX)/25;
     let yAxis= (window.innerHeight/ 2 - e.pageY)/25;
     card.style.transform=`rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
@@ -17,7 +17,7 @@ container.addEventListener('mousemove', (e)=>{
 });
 
 //  animate in
-container.addEventListener('mouseenter',(e)=>{
+container.addEventListener('mouseenter'||touchs,(e)=>{
 // popout
 title.style.transform='translateZ(150px)';
 snowboard.style.transform='translateZ(200px)rotateZ(-45deg)';
@@ -27,7 +27,7 @@ size.style.transform='translateZ(75px)';
 });
 
 // animate out
-container.addEventListener('mouseleave',(e)=>{
+container.addEventListener('mouseleave'||touchend ,(e)=>{
     card.style.transition='all 0.5 ease';
 card.style.transform=`rotateY(0deg)rotateX(0deg)`;
 title.style.transform='translateZ(0px)';
